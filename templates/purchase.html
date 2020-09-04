@@ -1,0 +1,194 @@
+<!doctype html>
+
+{% import "bootstrap/wtf.html" as wtf %}
+
+
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/static/style.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Login</title>
+  </head>
+  <body>
+
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="/">Invite+</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/logout">Logout <span class="sr-only">(current)</span></a>
+      </li>
+        <li class="nav-item active">
+        <a class="nav-link" href="/profile" id="prbtn">Profile <span class="sr-only">(current)</span></a>
+      </li>
+
+
+     <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Social links
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="https://discord.com/oauth2/authorize?client_id=743294031983018024&permissions=8&scope=bot">Invite the bot</a>
+    <a class="dropdown-item" href="https://discord.gg/NPNU3a9">Support server</a>
+    <a class="dropdown-item" href="https://www.twitch.tv/invitesplus">Twitch</a>
+  </div>
+</div>
+
+    </ul>
+  </div>
+</nav><!--
+  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="ZCCNV7KQ23ZXA">
+      <input type="hidden" name="custom" value="{{session['Discord_username']}}"/>
+<table>
+<tr><td><input type="hidden" name="on0" value="Select number of coins">Select number of coins</td></tr><tr><td><select name="os0">
+	<option value="75 coins">75 coins $3.00 USD</option>
+    <option value="75 coins">75 coins 0.02 USD</option>
+	<option value="300 coins">300 coins $10.00 USD</option>
+	<option value="700 coins">700 coins $25.00 USD</option>
+	<option value="1000 coins">1000 coins $35.00 USD</option>
+	<option value="1300 coins">1300 coins $45.00 USD</option>
+	<option value="1500 coins">1500 coins $50.00 USD</option>
+</select> </td></tr>
+</table>
+
+<input type="hidden" name="currency_code" value="USD">
+      <input type="hidden" name="return" value="http://127.0.0.1:5000/success/">
+				<input type="hidden" name="cancel_return" value="http://127.0.0.1:5000/">
+				<input type="hidden" name="notify_url" value="http://127.0.0.1:5000/ipn/">
+<input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_paynow_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+</form>
+  -->
+<!--
+  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+
+<input type="hidden" name="hosted_button_id" value="ZCCNV7KQ23ZXA">
+      <input type="hidden" name="custom" value="{{session['Discord_username']}}"/>
+<table>
+<tr><td><input type="hidden" name="on0" value="Select number of coins">Select number of coins</td></tr><tr><td><select name="os0">
+	<option value="75 coins">75 coins $3.00 USD</option>
+	<option value="300 coins">300 coins $10.00 USD</option>
+	<option value="700 coins">700 coins $25.00 USD</option>
+	<option value="1000 coins">1000 coins $35.00 USD</option>
+	<option value="1300 coins">1300 coins $45.00 USD</option>
+	<option value="1500 coins">1500 coins $50.00 USD</option>
+	<option value="10">10 $0.02 USD</option>
+</select> </td></tr>
+</table>
+<input type="hidden" name="currency_code" value="USD">
+<input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_paynow_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+</form>-->
+
+<div class="container">
+		{% if session['logged_in'] %}
+			<form name="topaypal" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+				<input type="hidden" name="cmd" value="_xclick-subscriptions">
+				<input type="hidden" name="custom" value="{{session['Discord_username']}}"/>
+				<input type="hidden" name="business" value="ayushmallik99@gmail.com">
+				<input type="hidden" name="item_name" value="subscription button">
+				<input type="hidden" name="item_number" value="75">
+				<input type="hidden" name="no_shipping" value="1">
+				<input type="hidden" name="a3" value="3">
+				<input type="hidden" name="p3" value="1">
+				<input type="hidden" name="t3" value="M">
+				<input type="hidden" name="src" value="1">
+				<input type="hidden" name="sra" value="1">
+				<input type="hidden" name="return" value="http://127.0.0.1:5000/success/">
+				<input type="hidden" name="cancel_return" value="http://127.0.0.1:5000/">
+				<!--<input type="hidden" name="notify_url" value="http://127.0.0.1:5000/ipn/">-->
+				<input type="submit" value="Subscribe" name="submit" title="PayPal - The safer, easier way to pay online!" class="btn btn-primary">
+			</form>
+		{% else %}
+			<p>You need to be <a href="/login/" target="blank"><strong>logged in</strong></a> to subscribe.</p>
+		{% endif %}
+
+
+  <!-- Cashfree -->
+<!--
+  <form id="redirectForm" method="post" action="https://test.cashfree.com/billpay/checkout/post/submit">
+    <input type="hidden" name="appId" value="<YOUR_APPID_HERE>"/>
+    <input type="hidden" name="orderId" value="order00001"/>
+    <input type="hidden" name="orderAmount" value="100"/>
+    <input type="hidden" name="orderCurrency" value="INR"/>
+    <input type="hidden" name="orderNote" value="test"/>
+    <input type="hidden" name="customerName" value="John Doe"/>
+    <input type="hidden" name="customerEmail" value="Johndoe@test.com"/>
+    <input type="hidden" name="customerPhone" value="9999999999"/>
+    <input type="hidden" name="returnUrl" value="<RETURN_URL>"/>
+    <input type="hidden" name="notifyUrl" value="<NOTIFY_URL>"/>
+    <input type="hidden" name="signature" value="<GENERATED_SIGNATURE>"/>
+  </form>
+-->
+  <footer class="page-footer font-small teal pt-4" style="background-color: #001133;
+color: white;
+  left: 0;
+  bottom: 0;
+  width: 100%;">
+
+  <!-- Footer Text -->
+  <div class="container-fluid text-center text-md-left">
+
+    <!-- Grid row -->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-6 mt-md-0 mt-3">
+
+        <!-- Content -->
+        <h5 class="text-uppercase font-weight-bold">About</h5>
+        <p>Invite+ bot of discord is created with aim to help your discord server increase members at a rapid pace. You can purchase coins from this website and use the coins to increase the members in your server.</p>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none pb-3">
+
+      <!-- Grid column -->
+      <div class="col-md-6 mb-md-0 mb-3">
+
+        <!-- Content -->
+        <h5 class="text-uppercase font-weight-bold">Important links</h5>
+        <a href="https://discord.gg/NPNU3a9" target="_blank">Join our discord server</a>
+        <br>
+        <a href="https://discord.com/oauth2/authorize?client_id=743294031983018024&permissions=8&scope=bot">Connect invite+ bot to your server</a>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Text -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">Developed by:
+    <a href="https://github.com/ayushanandmallik"> Ayush Anand Mallik</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+</div><!-- Footer -->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </body>
+</html>

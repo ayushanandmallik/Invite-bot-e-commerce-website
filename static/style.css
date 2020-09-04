@@ -1,0 +1,107 @@
+.card-deck {
+          width: 70%;
+          margin-top: 30px;
+          margin-left: 10%;
+         /* margin: 0 auto;
+        float: none;
+        margin-bottom: 10px;*/
+
+}/*
+html {
+  height: 100%;
+  box-sizing: border-box;
+}*/
+/*
+.page-footer font-small teal pt-4{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #001133;
+    text-align: center;
+    color: #fff;
+
+
+}*/
+
+#f1{background-color: #001133;
+color: white;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+#f3{
+background-color: #001133;
+color: white;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+
+}
+
+#f2 {
+background-color: #001133;
+position: fixed;
+color: white;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+
+}
+
+
+.l_form{
+margin: 0 auto;
+margin-top: 7%;
+width: 30%;
+
+}
+
+.s_form{
+margin: 0 auto;
+margin-top: 7%;
+width: 30%;
+}
+
+.b_form{
+margin: 0 auto;
+margin-top: 7%;
+width: 30%;
+}
+
+/*.btn btn-primary {
+margin: 0 auto;
+margin-top: 7%;
+width: 30%;
+
+}*/
+
+
+.alert alert-danger{
+margin: 0 auto;
+margin-top: 7%;
+width: 30%;
+
+
+}
+
+
+#salert{
+margin: 0 auto;
+width: 50%
+        float: none;
+        margin-bottom: 10px;
+
+}
+
+
+#prav{
+ margin: 0 auto;
+        float: none;
+        margin-bottom: 10px;
+}
+
+#prpic{
+border-radius: 50%;
+}
