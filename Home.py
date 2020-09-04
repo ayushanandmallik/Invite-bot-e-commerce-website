@@ -367,23 +367,7 @@ def ipn():
         return str(e)
 
 
-class adminsignup(FlaskForm):
-    Name= StringField('Name')
-    Email = StringField('Email', validators=[InputRequired(), Email()])
-    Password = PasswordField('Password', validators=[InputRequired()])
 
-@app.route('/admin_signup')
-def admin_signup():
-    return render_template('adminsignup.html')
-
-
-class adminlogin(FlaskForm):
-    Email= StringField('Email', validators=[InputRequired(), Email()])
-    Password= PasswordField('Password', validators=[InputRequired()])
-
-@app.route('/admin')
-def admin():
-    return render_template('admin.html')
 
 
 if __name__=='__main__':
